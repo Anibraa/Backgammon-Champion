@@ -1,0 +1,6 @@
+{
+  "name": "Backgammon Meister",
+  "description": "Klassisches Backgammon Spiel gegen den Computer mit einstellbaren Schwierigkeitsgraden (Leicht, Mittel, Schwer), visueller Zughilfe und eleganter Spielbrett-Optik.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

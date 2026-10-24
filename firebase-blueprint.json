@@ -1,0 +1,76 @@
+{
+  "entities": {
+    "GameRoom": {
+      "title": "GameRoom",
+      "description": "An online multiplayer backgammon match room synced between multiple devices",
+      "type": "object",
+      "properties": {
+        "roomId": {
+          "type": "string",
+          "description": "Unique 5-character uppercase room code (e.g. BG749)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["waiting", "playing", "finished"],
+          "description": "Room status"
+        },
+        "playerWhite": {
+          "type": "object",
+          "description": "White player info"
+        },
+        "playerBlack": {
+          "type": "object",
+          "description": "Black player info (null or object if waiting)"
+        },
+        "spectators": {
+          "type": "array",
+          "description": "List of spectator or queued players"
+        },
+        "board": {
+          "type": "object",
+          "description": "Current Backgammon BoardState"
+        },
+        "currentPlayer": {
+          "type": "string",
+          "enum": ["white", "black"],
+          "description": "Player whose turn it currently is"
+        },
+        "dice": {
+          "type": "array",
+          "description": "Current rolled dice values"
+        },
+        "diceRemaining": {
+          "type": "array",
+          "description": "Remaining playable dice values"
+        },
+        "hasRolled": {
+          "type": "boolean",
+          "description": "Whether the current player has rolled this turn"
+        },
+        "statusMessage": {
+          "type": "string",
+          "description": "Status text displayed to both players"
+        },
+        "winner": {
+          "type": "string",
+          "description": "Winner of the match if finished"
+        },
+        "winType": {
+          "type": "string",
+          "description": "normal, gammon, or backgammon"
+        },
+        "updatedAt": {
+          "type": "number",
+          "description": "Timestamp in milliseconds"
+        }
+      },
+      "required": ["roomId", "status", "board", "currentPlayer"]
+    }
+  },
+  "firestore": {
+    "/game_rooms/{roomId}": {
+      "schema": "GameRoom",
+      "description": "Active backgammon multiplayer rooms accessible across different devices via room code"
+    }
+  }
+}
