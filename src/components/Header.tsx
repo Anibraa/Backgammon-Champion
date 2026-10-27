@@ -99,7 +99,7 @@ export const Header: React.FC<HeaderProps> = ({
             🎲
           </div>
           <h1 className="text-xs sm:text-sm font-bold tracking-tight text-stone-100 hidden md:block leading-tight">
-            Backgammon
+            Backgammon Champion
           </h1>
 
           {/* Integrated Pips Scoreboard */}
